@@ -7,14 +7,13 @@ import './Home.css';
 
 
 const Home = () => {
-  const [artist, setArtist] = useState('eminem');
+  const [artist, setArtist] = useState('');
   const [songs, setSongs] = useState([]);
   const [load, setLoad] = useState(false)
   const inputStyle = {
     height: '50px',
     width: '50%'
   }
-
   useEffect(() => {
     if(artist !== ''){
       setLoad(true)
@@ -26,7 +25,7 @@ const Home = () => {
       })
       .catch(error => {
         setLoad(false)
-        setSongs(['Something wen wrong'])
+        setSongs(['Error'])
       })
     }
     
