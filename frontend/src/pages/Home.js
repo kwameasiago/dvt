@@ -3,7 +3,7 @@ import Input from '../components/Input';
 import CardList from '../components/CardList';
 import MobileCardList from '../components/MobileCardList'
 import Loader  from '../components/Loader';
-import api from '../Api';
+import {deezerApi} from '../Api';
 import './Home.css';
 
 
@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     if(artist !== ''){
       setLoad(true)
-      api.get(`/search?q=${artist}`)
+      deezerApi.get(`/search?q=${artist}`)
       .then(res => {
         setLoad(false)
         const {data: {data}} = res;

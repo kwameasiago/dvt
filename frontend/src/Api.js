@@ -1,11 +1,15 @@
 import axios from 'axios';
 
 const deezerUrl = process.env.REACT_APP_DEEZER_URL || '';
+const authUrl = process.env.REACT_APP_AUTH_URL || '';
 
 console.log(deezerUrl)
 // const BASEURL = `${corsUrl}${deezerUrl}`;
-const api = axios.create({
+export const deezerApi = axios.create({
     baseURL: deezerUrl,
 });
 
-export default api;
+export const authApi = axios.create({
+    baseURL: authUrl,
+});
+
