@@ -1,8 +1,9 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import Button from './Button';
 import './Navbar.css';
 
 const Navbar = () => {
+    const [showModal, setShowModal] = useState(false);
     return (
         <Fragment>
             <div className='navbar-container'>
