@@ -1,0 +1,9 @@
+.container-wrapper{
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
+.search{
+    text-align: center;
+    margin-top: 50px;
+}
