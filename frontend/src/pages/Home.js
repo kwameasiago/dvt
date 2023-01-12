@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../components/Input';
 import CardList from '../components/CardList';
+import MobileCardList from '../components/MobileCardList'
 import Loader  from '../components/Loader';
 import api from '../Api';
 import './Home.css';
@@ -9,10 +10,11 @@ import './Home.css';
 const Home = () => {
   const [artist, setArtist] = useState('');
   const [songs, setSongs] = useState([]);
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(false);
+  const isMobile =  window.innerWidth < 480;
   const inputStyle = {
-    height: '50px',
-    width: '50%'
+    height: isMobile?'40px':'50px',
+    width: isMobile?'90%':'50%'
   }
   useEffect(() => {
     if(artist !== ''){
@@ -40,7 +42,7 @@ const Home = () => {
       onChange={e => setArtist(e.target.value)} 
       value={artist}/>
       
-      {load?<Loader />:<CardList list={songs} />}
+      {load?<Loader />:isMobile?<MobileCardList list={songs} />:<CardList list={songs} />}
       </div>
   )
   

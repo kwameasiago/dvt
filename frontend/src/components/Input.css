@@ -11,3 +11,19 @@ input::placeholder{
     text-align: center;
     font-size: 1.1em;
 }
+
+
+@media screen and (max-width: 480px) {
+    input {
+        border-radius: 2em;
+        border-color: #264653;
+        color: #264653;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    input::placeholder{
+        color: #264653;
+        text-align: center;
+        font-size: .8em;
+    }
+}

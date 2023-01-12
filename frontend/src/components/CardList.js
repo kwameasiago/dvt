@@ -2,7 +2,7 @@ import React, { Fragment, createContext, useState } from 'react';
 import Card from '../components/Card';
 import CardModal from './CardModal';
 import './CardList.css';
-export const CardContext = createContext()
+export const CardContext = createContext();
 
 const CardList = ({ list }) => {
     const [currentCard, setCurrentCard] = useState(null);
@@ -27,7 +27,6 @@ const CardList = ({ list }) => {
     }
     return (
         <Fragment>
-            <div className='blur'>
             {
                 list.map((element, index) => {
                     if (index === 0 || index % 3 === 0) {
@@ -47,7 +46,6 @@ const CardList = ({ list }) => {
             
                 })
             }
-            </div>
             {cardModal&&<CardContext.Provider value={currentCardHandler}><CardModal data={currentCard}/></CardContext.Provider>}
 
         </Fragment>
