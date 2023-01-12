@@ -1,0 +1,16 @@
+.container-cardlist{
+    margin-top: 3em;
+}
+
+.cardlist{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0em;
+    /* height: 30em; */
+}
+
+.cardlist > div {
+    width: 35%;
+    margin: 10px;
+    height: 350px;
+}
