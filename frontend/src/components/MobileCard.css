@@ -1,0 +1,36 @@
+.container-mobile-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 15px 0px 15px 0px;
+    border-bottom-style: solid;
+    border-bottom-width: .1em;
+    border-bottom-color: #f4a261;
+}
+
+.mobile-left{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    
+}
+.mobile-left h1{
+    color: #264653;
+    font-size: 1em;
+    margin-left: 10px;
+
+}
+
+.mobile-left h2{
+    color: #f4a261;
+    font-size: .8em;
+    position: absolute;
+    right: 10px
+
+}
+.mobile-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

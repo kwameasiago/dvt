@@ -1,4 +1,4 @@
-.navbar-container{
+.navbar-container {
     display: flex;
     flex-direction: column wrap;
     justify-content: space-between;
@@ -6,13 +6,55 @@
 
 }
 
-.logo > span{
+.logo>span {
     font-size: 2em;
     font-weight: bold;
 }
-.logo > span:nth-child(1){
+
+.logo>span:nth-child(1) {
     color: #e76f51
 }
-.logo > span:nth-child(2){
+
+.logo>span:nth-child(2) {
     color: #264653
+}
+
+@media screen and (max-width: 480px) {
+    .auth {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .auth button {
+        margin: 1px;
+        height: 30px;
+        width: 90px;
+        background-color: #2a9d8f;
+        color: #fff;
+        padding-bottom: 30px;
+
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .logo>span {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    .auth {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .auth button {
+        margin: 1px;
+        height: 30px;
+        width: 90px;
+        background-color: #2a9d8f;
+        color: #fff;
+        padding-bottom: 30px;
+
+    }
 }
