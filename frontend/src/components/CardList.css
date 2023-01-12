@@ -14,3 +14,8 @@
     margin: 10px;
     height: 350px;
 }
+
+.blur{
+    backdrop-filter: blur(100px);
+    background: rgba(255, 255, 255, 0.2);
+}
