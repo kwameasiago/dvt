@@ -20,7 +20,7 @@ const MobileModalCard = ({ data }) => {
 
                 <img src={cover_big} alt={albumTitle} />
             </div>
-            <div className='modal-content'>
+            <div className='mobile-modal-content'>
                 
                 <div className='mobile-modal'>
 

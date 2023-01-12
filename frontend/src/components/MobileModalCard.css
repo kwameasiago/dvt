@@ -15,12 +15,10 @@
     height: 400px;
 }
 
-.modal-content {
+.mobile-modal-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    position: relative;
-    bottom: 2em;
 }
 .mobile-modal-left{
     width: 30%;
