@@ -1,0 +1,41 @@
+.auth-buttons{
+    position: fixed;
+    top: 10%;
+    /* left: 30%; */
+    width: 90%;
+    height: 50em;
+    background-image: url("../../public/bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 0 2em 0 2em;
+
+}
+
+.auth-buttons button{
+    background-color: transparent;
+    color: #fff;
+    border-style: solid;
+    border-color: #fff;
+    margin-top: 20px;
+
+}
+
+@media screen and (max-width: 480px) {
+    .auth-buttons{
+        position: fixed;
+        top: 0%;
+        right: -3em;
+        width: 110%;
+        
+        height: 50em;
+        background-image: url("../../public/bg.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        /* margin: 0 2em 0 2em; */
+    
+    }
+}

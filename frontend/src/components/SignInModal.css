@@ -1,0 +1,24 @@
+.signin-form{
+    margin: 12em 0 12em 0;
+}
+
+.signin-form input{
+    margin: 20px;
+    background-color:  transparent;
+    color: #fff;
+    border-radius: 5%;
+    border-style: solid;
+    border-width: .1em;
+    border-color: #fff;
+    width: 80%;
+    height: 60px;
+}
+.signin-form input::placeholder{
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .signin-form{
+        margin: 8em 0 2em 0;
+    }
+}
