@@ -1,9 +1,12 @@
 import { Fragment, useReducer } from 'react';
+import Button from './Button';
 import Input from './Input';
 import './SignUpModal.css'
 const initState = {
+    fname: '',
+    lname: '',
     email: '',
-    password: ''
+    password: '',
 }
 const reducer = (state, action) => {
     switch (action.type) {
@@ -27,59 +30,61 @@ const reducer = (state, action) => {
                 ...state,
                 password: action.payload
             }
+        case 'RESET':
+            return {
+                ...state,
+                initState
+            }
         default:
             return state
     }
 }
 
 
-const SignUpModal = () => {
+const SignUpModal = ({ setSignUp, handleSignUp, setShowModal }) => {
     const [state, dispatch] = useReducer(reducer, initState);
+    const onChange = (type) => (e) => {
+        dispatch({
+            type,
+            payload: e.target.value
+        })
+        setSignUp(state)
+    }
+
+
+
+    const handleSubmit = async () => {
+        await handleSignUp();
+        dispatch({ type: 'RESET'});
+
+    }
+
     return (
         <Fragment>
             <div className='signup-form'>
                 <Input
                     placeholder="FIRST NAME"
                     customStyle={null}
-                    onChange={e => {
-                        dispatch({
-                            type: 'FNAME',
-                            payload: e.target.value
-                        })
-                    }}
+                    onChange={onChange('FNAME')}
                     value={state.firstName} />
                 <Input
                     placeholder="LAST NAME."
                     customStyle={null}
-                    onChange={e => {
-                        dispatch({
-                            type: 'LNAME',
-                            payload: e.target.value
-                        })
-                    }}
+                    onChange={onChange('LNAME')}
                     value={state.lastName} />
                 <Input
                     placeholder="EMAIL."
                     customStyle={null}
-                    onChange={e => {
-                        dispatch({
-                            type: 'EMAIL',
-                            payload: e.target.value
-                        })
-                    }}
+                    onChange={onChange('EMAIL')}
                     value={state.email} />
                 <Input
                     placeholder="PASSWORD"
                     customStyle={null}
                     type="password"
-                    onChange={e => {
-                        dispatch({
-                            type: 'PASSWORD',
-                            payload: e.target.value
-                        })
-                    }}
+                    onChange={onChange('PASSWORD')}
                     value={state.password} />
             </div>
+            <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
         </Fragment>
     )
 }

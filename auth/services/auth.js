@@ -6,7 +6,6 @@ class Authentication {
     async register(userData) {
         const { firstName, lastName, email, password } = userData;
         try {
-            console.log(process.env.SALT)
             let res = await db.User.create({
                 firstName, lastName, email,
                 password: await bcrypt.hash(password, 10)
@@ -15,8 +14,7 @@ class Authentication {
             jwt = await jsonwebtoken.sign({ firstName, lastName, email}, process.env.SECRET_KEY, { expiresIn: '7d' });
 
             return {jwt}
-        } catch (error) {
-            console.log(error)
+        } catch (error) {    
             return {jwt: ''}
         }
     }
@@ -35,15 +33,13 @@ class Authentication {
             let compare  = await bcrypt.compare(plainPassword, password);
             let jwt;
             if(compare){
-                console.log('----',process.env.SECRET_KEY);
                 jwt = await jsonwebtoken.sign({ firstName, lastName, useEmail}, process.env.SECRET_KEY, { expiresIn: '7d' });
             }else{
+                
                 jwt = {jwt: ''}
             }
-    
-            return {jwt}
+            return jwt
         } catch (error) {
-            console.log(error)
             return {jwt: ''}
         }
     }
