@@ -8,22 +8,27 @@ const { register, login, userInfo } = auth;
 
 userRoute.post('/signup', async (req, res) => {
     const {body} = req;
+    const data = await  register(body);
+    console.log(data)
     res.status(200).send({
-        ... await  register(body)
+        ...data
     })
 });
 
 userRoute.post('/signin', async (req, res) => {
     const {body} = req;
+    const data = await  login(body);
+    console.log(data)
     res.status(200).send({
-        ... await  login(body)
+      ... data,  
     })
 });
 
 userRoute.get('/info', async (req, res) => {
     const {headers} = req;
+    const data = await  userInfo(headers);
     res.status(200).send({
-        ... await  userInfo(headers)
+        ...data
     })
 });
 

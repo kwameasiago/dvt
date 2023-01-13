@@ -1,22 +1,22 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
 import Button from "./Button";
 import './AuthModal.css';
-const AuthModal = ({option, setShowModal}) => {
+
+const AuthModal = ({option, setShowModal, setSignIn, setSignUp, handleSignUp, handleSignIn}) => {
     const [signin, setSignin] = useState(option);
-    const handleSubmit = () => {
-        setShowModal(false)
-    }
+
     return (
         <Fragment>
             <div className="auth-buttons">
             <Button content="SIGN IN" onClickEvent={() => setSignin(true)}/> <Button content="SIGN UP" onClickEvent={() => setSignin(false)}/>
-            {signin?<SignInModal />: <SignUpModal /> }
-            <Button content="OK" onClickEvent={handleSubmit }/> <Button content="CANCEL" onClickEvent={() => setShowModal(false)}/>
-            </div>
+            {
+            signin?
+            <SignInModal setSignIn={setSignIn}  signin={signin} handleSignIn={handleSignIn} setShowModal={setShowModal} />: 
+            <SignUpModal setSignUp={setSignUp} signin={signin} handleSignUp={handleSignUp} setShowModal={setShowModal}/> }
             
-            
+            </div>            
         </Fragment>
     )
 }

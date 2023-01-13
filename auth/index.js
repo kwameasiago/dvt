@@ -2,10 +2,12 @@ import express from 'express';
 import bodyparser from 'body-parser'
 import userRoute from "./controller/auth.js";
 import db from './models/index.js';
+import cors from 'cors';
 
 const {sequelize} = db;
 const app = express();
 const port = process.env.PORT || 3000;
+app.options( '*', cors());
 
 if(process.env.NODE_ENV === 'development'){
     sequelize.authenticate()
