@@ -6,7 +6,7 @@ import './MobileModalCard.css';
 
 const MobileModalCard = ({ data }) => {
     const context = useContext(CardContext);
-    const { album, title_short, artist, duration, link } = data;
+    const { album, title_short, artist, duration, link, preview } = data;
     const { title: albumTitle, cover_big,tracklist } = album;
     const { name: artistName, picture_medium, link: artistLink } = artist;
     return (
@@ -33,6 +33,11 @@ const MobileModalCard = ({ data }) => {
                         <ol><a href={artistLink} target="_blank" rel="noreferrer" >artist</a></ol>
                         <ol><a href={tracklist} target="_blank" rel="noreferrer" >Album tracklist</a></ol>
                     </ul>
+                    <audio controls>
+                            <source src={preview} type={"audio/ogg"} />
+                            <source src={preview} type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
                 </div>
             </div>
         </div>
