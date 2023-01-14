@@ -37,4 +37,7 @@ git clone this repository then follow the instructions listed below
 6. Run docker-compose up -d to run auth in detached mode
 
 ## CORS
-In the even you get cors when trying to fetch from the api visit this [link](https://cors-anywhere.herokuapp.com/ ) and request for temporary access.
+In the event you get cors when trying to fetch from the api visit this [link](https://cors-anywhere.herokuapp.com/ ) and request for temporary access.
+
+## Deployment link
+[Deploted](http://ec2-3-134-83-24.us-east-2.compute.amazonaws.com/)
