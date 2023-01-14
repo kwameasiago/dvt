@@ -15,7 +15,7 @@ const CardList = ({ list }) => {
     }
 
     if (list.includes('Error')) {
-        return <h1>Something went wrong</h1>
+        return <h1>Something went wrong. Try request for temporary access <a href='https://cors-anywhere.herokuapp.com/' > here</a></h1>
     }
 
     const currentCardHandler = (data) => {
