@@ -81,3 +81,8 @@
     cursor: pointer;
     
 }
+
+.mobile-modal audio{
+    position: relative;
+    left: 15px;
+}
