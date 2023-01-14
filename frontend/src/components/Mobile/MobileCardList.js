@@ -26,4 +26,4 @@ const MobileCardList = ({list}) => {
     </Fragment>)
 }
 
-export default MobileCardList
+export default MobileCardList;
