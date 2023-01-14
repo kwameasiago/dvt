@@ -2,6 +2,7 @@ import {useContext} from 'react';
 import Button from '../Button/Button';
 import moment from 'moment';
 import {CardContext} from './CardList';
+import {trancString} from '../../utils';
 import './Card.css'
 
 const Card = ({ data }) => {
@@ -27,7 +28,7 @@ const Card = ({ data }) => {
                 <div className='right'>
                     <div className='right-content'>
                         <h1>Album: {albumTitle}</h1>
-                        <h2>{title_short}</h2>
+                        <h2>{trancString(title_short)}</h2>
                         <h3>{moment.utc(duration*1000).format('HH:mm:ss')}</h3>
                         <Button 
                         onClickEvent={() => {handlePreview(data)}} 

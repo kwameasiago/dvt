@@ -20,3 +20,7 @@ export  const getCookie = (cname) => {
     }
     return "";
   }
+
+  export const trancString = (string) => {
+    return string.length > 25? string.slice(0, 24) + '...': string
+  }
