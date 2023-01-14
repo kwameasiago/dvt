@@ -6,7 +6,9 @@ export const CardContext = createContext();
 const MobileCardList = ({list}) => {
     const [showModal, setshowModal] = useState(false);
     const [currentCard, setCurrentCard] = useState({})
-    
+    if (list.includes('Error')) {
+        return <h1>Something went wrong. Try request for temporary access <a href='https://cors-anywhere.herokuapp.com/' > here</a></h1>
+    }
     
     const currentCardHandler = (data) => () => {
         setshowModal(!showModal);
