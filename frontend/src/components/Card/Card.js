@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import Button from './Button';
+import Button from '../Button/Button';
 import moment from 'moment';
 import {CardContext} from './CardList';
 import './Card.css'

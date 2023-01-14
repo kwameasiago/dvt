@@ -1,7 +1,7 @@
 import { useState, Fragment } from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
-import Button from "./Button";
+import Button from "../Button/Button";
 import './AuthModal.css';
 
 const AuthModal = ({option, setShowModal, setSignIn, setSignUp, handleSignUp, handleSignIn}) => {

@@ -1,5 +1,5 @@
 import React, { Fragment, createContext, useState } from 'react';
-import Card from '../components/Card';
+import Card from './Card';
 import CardModal from './CardModal';
 import './CardList.css';
 export const CardContext = createContext();

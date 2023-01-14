@@ -1,9 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import AuthModal from './AuthModal';
-import Button from './Button';
+import AuthModal from '../AuthModal/AuthModal';
+import Button from '../Button/Button';
 import './Navbar.css';
-import { authApi } from '../Api';
-import { setCookie, getCookie } from '../utils';
+import { authApi } from '../../Api';
+import { setCookie, getCookie } from '../../utils';
 
 const Navbar = () => {
     const [showModal, setShowModal] = useState(false);
