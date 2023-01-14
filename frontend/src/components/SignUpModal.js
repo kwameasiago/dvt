@@ -83,8 +83,9 @@ const SignUpModal = ({ setSignUp, handleSignUp, setShowModal }) => {
                     type="password"
                     onChange={onChange('PASSWORD')}
                     value={state.password} />
+                    <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
             </div>
-            <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
+            
         </Fragment>
     )
 }

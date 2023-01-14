@@ -29,9 +29,9 @@ return (
                 <h2>{albumTitle}</h2>
                 <h3>by {artistName} - {moment.utc(duration*1000).format('HH:mm:ss')}</h3>
                 <ul>
-                    <ol><a href={link} target="_blank">tracks</a></ol>
-                    <ol><a href={artistLink} target="_blank">artist</a></ol>
-                    <ol><a href={tracklist} target="_blank">Album tracklist</a></ol>
+                    <ol><a href={link} target="_blank" rel="noreferrer">tracks</a></ol>
+                    <ol><a href={artistLink} target="_blank" rel="noreferrer">artist</a></ol>
+                    <ol><a href={tracklist} target="_blank" rel="noreferrer">Album tracklist</a></ol>
                 </ul>
             </div>
 

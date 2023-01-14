@@ -2,9 +2,8 @@ import moment from 'moment';
 import './MobileCard.css';
 
 const MobileCard  = ({data, onClick}) => {
-    const { album, title_short, artist, duration, link } = data;
-    const { title: albumTitle, cover_big,tracklist } = album;
-    const { name: artistName, picture_medium, link: artistLink } = artist;
+    const {  title_short, artist, duration } = data;
+    const { name: artistName, picture_medium,  } = artist;
     console.log(data)
     return (
         <div className="container-mobile-card" onClick={onClick(data)}>
