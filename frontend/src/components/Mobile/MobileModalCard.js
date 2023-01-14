@@ -1,5 +1,5 @@
 import moment from 'moment';
-import Button from './Button';
+import Button from '../Button/Button';
 import { useContext } from 'react';
 import { CardContext } from './MobileCardList'
 import './MobileModalCard.css';

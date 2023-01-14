@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CardContext } from './CardList';
-import Button from './Button';
+import Button from '../Button/Button';
 import moment from 'moment';
 
 import './CardModal.css'

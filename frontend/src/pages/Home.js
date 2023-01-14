@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../components/Input';
-import CardList from '../components/CardList';
-import MobileCardList from '../components/MobileCardList'
-import Loader  from '../components/Loader';
+import Input from '../components/Input/Input';
+import CardList from '../components/Card/CardList';
+import MobileCardList from '../components/Mobile/MobileCardList'
+import Loader  from '../components/Loader/Loader';
 import {deezerApi} from '../Api';
 import './Home.css';
 
