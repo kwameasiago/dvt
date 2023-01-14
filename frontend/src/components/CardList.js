@@ -37,7 +37,7 @@ const CardList = ({ list }) => {
             }
             
         } catch (error) {
-            console.log(error)
+            
         }
     }
 

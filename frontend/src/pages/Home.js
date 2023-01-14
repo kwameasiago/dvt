@@ -11,11 +11,12 @@ const Home = () => {
   const [artist, setArtist] = useState('');
   const [songs, setSongs] = useState([]);
   const [load, setLoad] = useState(false);
-  const isMobile =  window.innerWidth < 480;
+  const isMobile =  window.innerWidth <= 480;
   const inputStyle = {
     height: isMobile?'40px':'50px',
     width: isMobile?'90%':'50%'
   }
+
   useEffect(() => {
     if(artist !== ''){
       setLoad(true)

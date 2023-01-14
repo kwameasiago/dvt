@@ -23,13 +23,11 @@ const Navbar = () => {
                 }
             })
                 .then(res => {
-                    console.log(res.data)
                     setSignedIn(true)
                     serUserData(res.data)
                 })
                 .catch(err => {
                     setSignedIn(false)
-                    console.log(err)
                 })
         }else{
             setSignedIn(false)
@@ -50,7 +48,6 @@ const Navbar = () => {
             .then(res => {
                 const data = res.data;
                 if (data.jwt !== '') {
-                    console.log(data)
                     setShowModal(false)
                     setSignedIn(true)
                     setCookie('auth-token', data.jwt, 1)

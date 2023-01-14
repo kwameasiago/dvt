@@ -11,7 +11,6 @@ const CardModal = (song) => {
     if (!data) {
         return
     }
-    console.log(data)
     const { album, title_short, artist, duration, link, preview } = data;
     const { title: albumTitle, cover_big, tracklist } = album;
     const { name: artistName, picture_medium, link: artistLink } = artist;
