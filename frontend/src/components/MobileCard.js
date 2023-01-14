@@ -4,7 +4,7 @@ import './MobileCard.css';
 const MobileCard  = ({data, onClick}) => {
     const {  title_short, artist, duration } = data;
     const { name: artistName, picture_medium,  } = artist;
-    console.log(data)
+
     return (
         <div className="container-mobile-card" onClick={onClick(data)}>
             <div className="mobile-left">
