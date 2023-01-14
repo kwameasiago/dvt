@@ -96,6 +96,7 @@ const Navbar = () => {
         <Fragment>
             {showModal &&
                 <AuthModal
+                    userData={userData}
                     option={option}
                     setShowModal={setShowModal}
                     setSignUp={setSignUp}

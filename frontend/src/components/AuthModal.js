@@ -1,4 +1,4 @@
-import { useState, Fragment, useContext } from "react";
+import { useState, Fragment } from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
 import Button from "./Button";
