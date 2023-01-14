@@ -22,5 +22,5 @@ export  const getCookie = (cname) => {
   }
 
   export const trancString = (string) => {
-    return string.length > 25? string.slice(0, 24) + '...': string
+    return string.length > 23? string.slice(0, 22) + '...': string
   }
