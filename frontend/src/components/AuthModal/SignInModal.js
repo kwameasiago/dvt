@@ -1,6 +1,7 @@
-import { Fragment, useReducer, } from 'react';
+import { Fragment, useReducer, useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import {validateEmail} from '../../utils';
 import './SignInModal.css';
 
 const initState = {
@@ -29,8 +30,9 @@ const reducer = (state, action) => {
     }
 }
 
-const SignInModal = ({ setSignIn, handleSignIn, setShowModal }) => {
+const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification, }) => {
     const [state, dispatch] = useReducer(reducer, initState);
+
     const onChange = (type) => (e) => {
         dispatch({
             type,
@@ -40,9 +42,29 @@ const SignInModal = ({ setSignIn, handleSignIn, setShowModal }) => {
     }
 
     const handleSubmit = async () => {
-        await handleSignIn();
-        dispatch({ type: 'RESET'});
+        const keys = Object.keys(state);
+        const value = Object.values(state);
 
+        if (value.includes('')) {
+            handleNotification({
+                showNotification: true,
+                type: 'error',
+                title: 'Error ',
+                message: 'All input field are required'
+            })
+        }
+        else if (validateEmail(state.email)){
+            handleNotification({
+                showNotification: true,
+                type: 'error',
+                title: 'Error ',
+                message: 'Provide a valid email'
+            })
+        } 
+        else {
+            await handleSignIn();
+            dispatch({ type: 'RESET' });
+        }
     }
 
     return (
@@ -59,9 +81,9 @@ const SignInModal = ({ setSignIn, handleSignIn, setShowModal }) => {
                     type="password"
                     onChange={onChange('PASSWORD')}
                     value={state.password} />
-                    <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
+                <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
             </div>
-            
+
         </Fragment>
     )
 }
