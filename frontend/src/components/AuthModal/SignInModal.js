@@ -30,7 +30,7 @@ const reducer = (state, action) => {
     }
 }
 
-const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification, }) => {
+const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification,load }) => {
     const [state, dispatch] = useReducer(reducer, initState);
 
     const onChange = (type) => (e) => {
@@ -44,7 +44,7 @@ const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification
     const handleSubmit = async () => {
         const keys = Object.keys(state);
         const value = Object.values(state);
-
+        
         if (value.includes('')) {
             handleNotification({
                 showNotification: true,
@@ -53,7 +53,8 @@ const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification
                 message: 'All input field are required'
             })
         }
-        else if (validateEmail(state.email)){
+        else if (!validateEmail(state.email)){
+            console.log(state.email, validateEmail(state.email) )
             handleNotification({
                 showNotification: true,
                 type: 'error',
@@ -81,7 +82,7 @@ const SignInModal = ({ setSignIn, handleSignIn, setShowModal, handleNotification
                     type="password"
                     onChange={onChange('PASSWORD')}
                     value={state.password} />
-                <Button content="OK" onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
+                <Button content={load? "Loading ...":"OK"} onClickEvent={handleSubmit} /> <Button content="CANCEL" onClickEvent={() => setShowModal(false)} />
             </div>
 
         </Fragment>

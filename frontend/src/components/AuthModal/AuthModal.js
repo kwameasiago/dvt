@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Notification from '../Notification/Notification';
 import './AuthModal.css';
 
-const AuthModal = ({ option, setShowModal, setSignIn, setSignUp, handleSignUp, handleSignIn, userData }) => {
+const AuthModal = ({ option, setShowModal, setSignIn, setSignUp, handleSignUp, handleSignIn, userData, load }) => {
     const notifyConfig = {
         showNotification: false,
         type: '',
@@ -31,6 +31,7 @@ const AuthModal = ({ option, setShowModal, setSignIn, setSignUp, handleSignUp, h
     };
     const [signin, setSignin] = useState(option);
     const { showNotification, title, message, type } = notification;
+  
     return (
         <Fragment>
             <div className="auth-buttons">
@@ -50,6 +51,7 @@ const AuthModal = ({ option, setShowModal, setSignIn, setSignUp, handleSignUp, h
                             setShowModal={setShowModal}
                             handleNotification={handleNotification}
                             closeModal={closeModal}
+                            load={load}
                         /> :
                         <SignUpModal
                             setSignUp={setSignUp}
@@ -57,7 +59,9 @@ const AuthModal = ({ option, setShowModal, setSignIn, setSignUp, handleSignUp, h
                             handleSignUp={handleSignUp}
                             setShowModal={setShowModal}
                             handleNotification={handleNotification}
-                            closeModal={closeModal} />}
+                            closeModal={closeModal} 
+                            load={load}
+                        />}
 
             </div>
         </Fragment>
