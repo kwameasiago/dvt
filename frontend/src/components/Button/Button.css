@@ -1,13 +1,17 @@
 button {
-    background-color: transparent;
+    background-color: #2a9d8f;
     border-color: #2a9d8f;
+    border-radius: 15em;
     padding: 0.9em;
     margin: 0 .8em 0 .8em;
     transition-duration: 0.4s;
     cursor: pointer;
+    color: #fff;
 }
 
 button:hover{
-    background-color: #2a9d8f;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
+    
+    
 }

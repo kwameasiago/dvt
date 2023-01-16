@@ -24,7 +24,7 @@ const Navbar = () => {
             })
                 .then(res => {
                     setSignedIn(true)
-                    serUserData(res.data)
+                    serUserData({...res.data, error: ''});
                 })
                 .catch(err => {
                     setSignedIn(false)
@@ -51,13 +51,14 @@ const Navbar = () => {
                     setShowModal(false)
                     setSignedIn(true)
                     setCookie('auth-token', data.jwt, 1)
+                    serUserData({...userData, error: ''});
                 }
                 else {
-                    alert('Invalid login credentials');
+                    serUserData({...userData, error: 'Invalid login credentials'});
                 }
             })
             .catch(err => {
-                alert('Invalid login credentials');
+                serUserData({...userData, error: 'Invalid login credentials'});
             });
     }
 
@@ -73,13 +74,14 @@ const Navbar = () => {
                     setShowModal(false)
                     setSignedIn(true)
                     setCookie('auth-token', data.jwt, 1)
+                    serUserData({...userData, error: ''});
                 }
                 else {
-                    alert('Invalid login credentials');
+                    serUserData({...userData, error: 'Invalid login credentials'});
                 }
             })
             .catch(err => {
-                alert('Invalid login credentials');
+                serUserData({...userData, error: 'Invalid login credentials'});
             })
     }
 
