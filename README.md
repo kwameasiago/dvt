@@ -21,7 +21,7 @@ git clone this repository then follow the instructions listed below
 4. Run docker-compose pull to pull the images
 5. Run docker-compose build to build the images
 6. Run docker-compose up -d to run auth in detached mode
-7. Bash into the new  auth container using docker-compose run auth bash
+7. Bash into the new  auth container using docker-compose run auth bash --url <YOUR DATABASE URI>
 8. Run migrations with npx sequelize-cli db:migrate
 9. Exit from bash using exit
 
