@@ -12,6 +12,7 @@ const Navbar = () => {
     const [signInData, setSignInData] = useState({});
     const [signUpData, setSignUpData] = useState({});
     const [userData, serUserData] = useState({});
+    const [load, setLoad] = useState(false)
 
 
     useEffect(() => {
@@ -40,12 +41,14 @@ const Navbar = () => {
     const setSignUp = (userData) => setSignUpData(userData);
 
     const handleSignIn = () => {
+        setLoad(true);
         const value = Object.keys(signInData);
         if (value.includes('')) {
             return
         }
         authApi.post('/auth/signin', signInData)
             .then(res => {
+                setLoad(false);
                 const data = res.data;
                 if (data.jwt !== '') {
                     setShowModal(false)
@@ -58,17 +61,20 @@ const Navbar = () => {
                 }
             })
             .catch(err => {
+                setLoad(false);
                 serUserData({...userData, error: 'Invalid login credentials'});
             });
     }
 
     const handleSignUp = () => {
+        setLoad(true);
         const value = Object.keys(signUpData);
         if (value.includes('')) {
             return
         }
         authApi.post('/auth/signup', signUpData)
             .then(res => {
+                setLoad(false);
                 const data = res.data;
                 if (data.jwt !== '') {
                     setShowModal(false)
@@ -77,11 +83,12 @@ const Navbar = () => {
                     serUserData({...userData, error: ''});
                 }
                 else {
-                    serUserData({...userData, error: 'Invalid login credentials'});
+                    serUserData({...userData, error: 'Email already exists'});
                 }
             })
             .catch(err => {
-                serUserData({...userData, error: 'Invalid login credentials'});
+                setLoad(false);
+                serUserData({...userData, error: 'Email already exists'});
             })
     }
 
@@ -101,7 +108,8 @@ const Navbar = () => {
                     setSignUp={setSignUp}
                     setSignIn={setSignIn}
                     handleSignIn={handleSignIn}
-                    handleSignUp={handleSignUp} />}
+                    handleSignUp={handleSignUp} 
+                    load={load}/>}
             <div className='navbar-container'>
                 <div className="logo">
                     <span>DVT</span> <span>DEEZERS</span>
